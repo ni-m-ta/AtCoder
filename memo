@@ -1,0 +1,3 @@
+複数のリストが同じ要素を持っているかどうかはsortで並べ替え
+import sys imput = sys.stdin.readline必須
+
