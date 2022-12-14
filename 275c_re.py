@@ -12,5 +12,5 @@ for i in range(n):
             for l in range(n):
                 if porns[i][0]<=porns[j][0] and porns[i][1]<porns[j][1]:
                     if porns[k][0]<=porns[l][0] and porns[k][1]<porns[l][1] and porns[i][0]<porns[k][0]:
-                        if porns[i][0]-porns[j][0]
+                        if porns[i][0]-porns[j][0] == porns[k][0]-porns[0] 
 
