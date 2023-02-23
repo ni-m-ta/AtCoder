@@ -1,3 +1,44 @@
 複数のリストが同じ要素を持っているかどうかはsortで並べ替え
 import sys imput = sys.stdin.readline必須
 とりあえず数列を昇順か降順に並べると効率良く調べられるかも
+
+グラフ
+考えられる物事の集合とその要素の関係を表す
+
+深さ優先探索(DFS)
+どんどん先に進む
+Last in First Out
+再帰関数
+
+幅優先探索(BFS)
+各段階ごとに進む
+First in First Out
+deque
+
+1seen 全体を false に初期化して、todo を空にする
+2seen[s] = true として、todo に s を追加する
+3todo が空になるまで以下を繰り返す:
+4 todo から一つ頂点を取り出して v とする
+5 T(v) の各要素 w に対して、
+6    seen[w] = true であったならば、何もしない
+7    そうでなかったら、seen[w] = true として、todo に w を追加する
+seen = [False for _ in range(n+1)]
+ans = []
+def dfs(graph, v, goal):
+    seen[v] = True
+    if v == goal:
+        ans.append(v)
+        print(ans)
+        exit()
+    for i in range(0,len(graph[v])):
+        if seen[graph[v][i]]:
+            continue
+        ans.append(v)
+        dfs(graph, graph[v][i], goal)
+        ans.pop()
+探索し尽くしてかつゴールに行かないときに初めてpopにたどり着いて誤った道を消す、そして一つ前に戻る
+
+木
+サイクル(閉路)を持たずまた連結であるグラフ
+根
+ある頂点を特別に扱うときその点を根という
